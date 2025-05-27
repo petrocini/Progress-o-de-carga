@@ -1,8 +1,15 @@
+import java.util.Properties
+
 plugins {
     alias(libs.plugins.android.application)
     alias(libs.plugins.kotlin.android)
     alias(libs.plugins.kotlin.compose)
     alias(libs.plugins.google.services)
+}
+
+val localProps = Properties().apply {
+    val file = rootProject.file("local.properties")
+    if (file.exists()) load(file.inputStream())
 }
 
 android {
@@ -17,6 +24,11 @@ android {
         versionName = "1.0"
 
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
+        buildConfigField(
+            "String",
+            "FIREBASE_WEB_CLIENT_ID",
+            "\"${localProps.getProperty("firebaseWebClientId")}\""
+        )
     }
 
     buildTypes {
@@ -37,6 +49,7 @@ android {
     }
     buildFeatures {
         compose = true
+        buildConfig = true
     }
 }
 
@@ -71,5 +84,7 @@ dependencies {
 
 // Navigation
     implementation("androidx.navigation:navigation-compose:2.7.7")
+    implementation("com.google.android.gms:play-services-auth:21.1.1")
+
 
 }
