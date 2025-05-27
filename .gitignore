@@ -45,7 +45,7 @@ ehthumbs.db
 Desktop.ini
 
 # Firebase / Google services
-google-services.json
+app/google-services.json
 firebase-debug.log
 
 # JetBrains
