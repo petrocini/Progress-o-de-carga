@@ -70,6 +70,10 @@ dependencies {
     androidTestImplementation(libs.androidx.ui.test.junit4)
     debugImplementation(libs.androidx.ui.tooling)
     debugImplementation(libs.androidx.ui.test.manifest)
+    implementation(libs.retrofit)
+    implementation(libs.moshi)
+    implementation(libs.moshi.kotlin)
+    implementation(libs.retrofit.moshi.converter)
 
     // Firebase
     implementation(platform("com.google.firebase:firebase-bom:32.7.0"))

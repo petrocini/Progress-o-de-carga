@@ -1,5 +1,6 @@
 package com.petrocini.progressodecarga.presentation.add
 
+import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.*
 import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.foundation.lazy.items
@@ -11,6 +12,7 @@ import androidx.navigation.NavController
 import com.petrocini.progressodecarga.domain.model.WorkoutSet
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.firestore.FirebaseFirestore
+import com.petrocini.progressodecarga.data.remote.RetrofitService
 import com.petrocini.progressodecarga.domain.model.Workout
 
 @OptIn(ExperimentalMaterial3Api::class)
@@ -22,6 +24,19 @@ fun AddWorkoutScreen(navController: NavController) {
     val sets = remember { mutableStateListOf<WorkoutSet>() }
 
     val isFormValid = exerciseName.isNotBlank() && sets.isNotEmpty()
+
+    val allExercises by produceState(initialValue = emptyList<String>()) {
+        value = try {
+            RetrofitService.api.getExercises().results.map { it.name }
+        } catch (e: Exception) {
+            emptyList()
+        }
+    }
+
+    val suggestions = allExercises.filter {
+        it.contains(exerciseName, ignoreCase = true)
+    }.take(5)
+
 
     Scaffold(
         topBar = {
@@ -61,6 +76,18 @@ fun AddWorkoutScreen(navController: NavController) {
                 label = { Text("Exercise name") },
                 modifier = Modifier.fillMaxWidth()
             )
+
+            Column {
+                suggestions.forEach { suggestion ->
+                    Text(
+                        text = suggestion,
+                        modifier = Modifier
+                            .fillMaxWidth()
+                            .padding(4.dp)
+                            .clickable { exerciseName = suggestion }
+                    )
+                }
+            }
 
             Spacer(modifier = Modifier.height(16.dp))
 
