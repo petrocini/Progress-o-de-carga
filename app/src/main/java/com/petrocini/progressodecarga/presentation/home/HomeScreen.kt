@@ -10,6 +10,7 @@ import androidx.compose.ui.unit.dp
 import androidx.lifecycle.viewmodel.compose.viewModel
 import androidx.navigation.NavController
 import com.petrocini.progressodecarga.domain.model.Workout
+import com.petrocini.progressodecarga.presentation.navigation.Screen
 import java.text.SimpleDateFormat
 import java.util.*
 
@@ -24,7 +25,7 @@ fun HomeScreen(navController: NavController, viewModel: HomeViewModel = viewMode
     Scaffold(
         floatingActionButton = {
             FloatingActionButton(onClick = {
-                // TODO: navigate to AddWorkout screen
+                navController.navigate(Screen.AddWorkout.route)
             }) {
                 Text("+")
             }

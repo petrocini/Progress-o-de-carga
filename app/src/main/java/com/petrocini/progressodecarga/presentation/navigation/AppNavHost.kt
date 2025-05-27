@@ -12,5 +12,9 @@ fun AppNavHost(navController: NavHostController) {
     NavHost(navController = navController, startDestination = Screen.Auth.route) {
         composable(Screen.Auth.route) { AuthScreen(navController) }
         composable(Screen.Home.route) { HomeScreen(navController) }
+        composable(Screen.AddWorkout.route) {
+            AddWorkoutScreen(navController)
+        }
+
     }
 }
