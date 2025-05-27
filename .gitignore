@@ -1,0 +1,70 @@
+# === Android / Kotlin / Jetpack Compose ===
+
+# Gradle
+.gradle/
+build/
+**/build/
+!gradle/wrapper/gradle-wrapper.jar
+
+# Local configuration
+/local.properties
+/.idea/caches
+/.idea/libraries
+/.idea/modules.xml
+/.idea/workspace.xml
+/.idea/navEditor.xml
+/.idea/assetWizardSettings.xml
+/.idea/gradle.xml
+/.idea/misc.xml
+
+# Kotlin specific
+*.iml
+*.hprof
+*.log
+*.tmp
+
+# Jetpack Compose
+.compose-cache/
+.idea/compose-custom-preview.xml
+
+# Android Studio
+*.iws
+*.ipr
+*.class
+*.apk
+*.ap_
+captures/
+.externalNativeBuild
+.cxx
+.DS_Store
+*.swp
+
+# OS
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+
+# Firebase / Google services
+google-services.json
+firebase-debug.log
+
+# JetBrains
+.idea/
+*.iws
+*.iml
+*.ipr
+out/
+
+# Keystore (NUNCA subir isso)
+*.jks
+*.keystore
+
+# Crashlytics / Fabric
+crashlytics-build.properties
+
+# Test results
+test-results/
+test-output/
+
+# Local Properties
+local.properties
