@@ -10,60 +10,64 @@ import androidx.compose.runtime.*
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.platform.LocalContext
+import androidx.lifecycle.viewmodel.compose.viewModel
 import androidx.navigation.NavController
 import com.google.android.gms.auth.api.identity.BeginSignInRequest
 import com.google.android.gms.auth.api.identity.Identity
-import com.google.firebase.auth.GoogleAuthProvider
-import com.google.firebase.auth.ktx.auth
-import com.google.firebase.ktx.Firebase
+import com.petrocini.progressodecarga.BuildConfig
 import com.petrocini.progressodecarga.presentation.navigation.Screen
 import kotlinx.coroutines.tasks.await
 
 @Composable
-fun AuthScreen(navController: NavController) {
+fun AuthScreen(
+    navController: NavController,
+    viewModel: AuthViewModel = viewModel(factory = AuthViewModelFactory())
+) {
     val context = LocalContext.current
-    val auth = Firebase.auth
+    val uiState by viewModel.uiState.collectAsState()
+
     val oneTapClient = remember { Identity.getSignInClient(context) }
-    var loading by remember { mutableStateOf(false) }
 
     val launcher = rememberLauncherForActivityResult(ActivityResultContracts.StartIntentSenderForResult()) { result ->
         if (result.resultCode == Activity.RESULT_OK) {
             val credential = oneTapClient.getSignInCredentialFromIntent(result.data)
             val idToken = credential.googleIdToken
-            val firebaseCredential = GoogleAuthProvider.getCredential(idToken, null)
-            loading = true
-            Firebase.auth.signInWithCredential(firebaseCredential)
-                .addOnCompleteListener { task ->
-                    loading = false
-                    if (task.isSuccessful) {
-                        navController.navigate(Screen.Home.route) {
-                            popUpTo(Screen.Auth.route) { inclusive = true }
-                        }
-                    }
+            viewModel.signInWithGoogle(idToken) {
+                navController.navigate(Screen.Home.route) {
+                    popUpTo(Screen.Auth.route) { inclusive = true }
                 }
+            }
         }
     }
 
     LaunchedEffect(Unit) {
+        viewModel.checkIfUserLoggedIn {
+            navController.navigate(Screen.Home.route) {
+                popUpTo(Screen.Auth.route) { inclusive = true }
+            }
+        }
+
         val request = BeginSignInRequest.builder()
             .setGoogleIdTokenRequestOptions(
                 BeginSignInRequest.GoogleIdTokenRequestOptions.builder()
                     .setSupported(true)
-                    .setServerClientId("SEU_CLIENT_ID_DO_FIREBASE_WEB")
+                    .setServerClientId(BuildConfig.FIREBASE_WEB_CLIENT_ID)
                     .setFilterByAuthorizedAccounts(false)
                     .build()
             )
             .build()
 
         val result = runCatching { oneTapClient.beginSignIn(request).await() }
-        result.onSuccess { launcher.launch(IntentSenderRequest.Builder(it.pendingIntent.intentSender).build()) }
+        result.onSuccess {
+            launcher.launch(IntentSenderRequest.Builder(it.pendingIntent.intentSender).build())
+        }
     }
 
     Box(
         modifier = Modifier.fillMaxSize(),
         contentAlignment = Alignment.Center
     ) {
-        if (loading) {
+        if (uiState.loading) {
             CircularProgressIndicator()
         } else {
             Text("Iniciando login com Google...")

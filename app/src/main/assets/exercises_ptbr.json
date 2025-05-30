@@ -1,0 +1,275 @@
+[
+    {
+        "name": "Supino reto com barra",
+        "type": "Força",
+        "muscle": "Peitoral",
+        "difficulty": "Intermediário",
+        "instructions": "Deite-se em um banco reto, segure a barra com as mãos afastadas na largura dos ombros e abaixe até o peito. Empurre de volta até a posição inicial."
+    },
+    {
+        "name": "Agachamento com barra",
+        "type": "Força",
+        "muscle": "Quadríceps, Glúteos",
+        "difficulty": "Intermediário",
+        "instructions": "Com a barra apoiada nos ombros, agache flexionando os joelhos e quadris, mantendo a coluna ereta. Retorne à posição inicial."
+    },
+    {
+        "name": "Puxada frente no pulley",
+        "type": "Força",
+        "muscle": "Costas (Latíssimo do dorso)",
+        "difficulty": "Iniciante",
+        "instructions": "Sente-se no aparelho, segure a barra com as mãos afastadas e puxe até o peito, contraindo as costas. Retorne lentamente."
+    },
+    {
+        "name": "Desenvolvimento com halteres",
+        "type": "Força",
+        "muscle": "Ombros (Deltoides)",
+        "difficulty": "Intermediário",
+        "instructions": "Com um halter em cada mão, sente-se com a coluna reta e empurre os pesos para cima até esticar os braços. Retorne à posição inicial."
+    },
+    {
+        "name": "Rosca direta com barra",
+        "type": "Força",
+        "muscle": "Bíceps",
+        "difficulty": "Iniciante",
+        "instructions": "Segure a barra com palmas para cima e flexione os cotovelos até a altura do ombro."
+    },
+    {
+        "name": "Tríceps pulley",
+        "type": "Força",
+        "muscle": "Tríceps",
+        "difficulty": "Iniciante",
+        "instructions": "Fique em pé diante da polia alta, segure a barra com as palmas para baixo e empurre até estender os braços. Retorne devagar."
+    },
+    {
+        "name": "Leg press 45°",
+        "type": "Força",
+        "muscle": "Quadríceps, Glúteos",
+        "difficulty": "Intermediário",
+        "instructions": "Sente-se no aparelho com os pés afastados, empurre a plataforma para cima e abaixe controladamente até 90° de flexão do joelho."
+    },
+    {
+        "name": "Remada curvada com barra",
+        "type": "Força",
+        "muscle": "Costas",
+        "difficulty": "Avançado",
+        "instructions": "Com a barra, incline o tronco e puxe-a até o abdômen."
+    },
+    {
+        "name": "Elevação lateral com halteres",
+        "type": "Isolamento",
+        "muscle": "Ombros (Deltoide lateral)",
+        "difficulty": "Iniciante",
+        "instructions": "Em pé, com um halter em cada mão, eleve os braços lateralmente até a altura dos ombros. Retorne devagar."
+    },
+    {
+        "name": "Abdominal infra no banco declinado",
+        "type": "Resistência",
+        "muscle": "Abdômen inferior",
+        "difficulty": "Intermediário",
+        "instructions": "Deitado no banco inclinado, eleve as pernas estendidas até formar 90° com o tronco. Abaixe devagar."
+    },
+    {
+        "name": "Supino inclinado com halteres",
+        "type": "Força",
+        "muscle": "Peitoral superior",
+        "difficulty": "Intermediário",
+        "instructions": "Deite-se em um banco inclinado, segure os halteres ao lado do peito e empurre-os para cima até esticar os braços."
+    },
+    {
+        "name": "Crossover no cross",
+        "type": "Isolamento",
+        "muscle": "Peitoral",
+        "difficulty": "Intermediário",
+        "instructions": "Puxe os cabos do cross frente ao peito com braços levemente flexionados, formando um arco."
+    },
+    {
+        "name": "Puxada atrás no pulley",
+        "type": "Força",
+        "muscle": "Costas",
+        "difficulty": "Intermediário",
+        "instructions": "Sente-se e puxe a barra para trás da cabeça. Mantenha a postura ereta e controle o movimento."
+    },
+    {
+        "name": "Remada baixa no triângulo",
+        "type": "Força",
+        "muscle": "Costas",
+        "difficulty": "Intermediário",
+        "instructions": "Sente-se no banco com os pés apoiados, puxe o triângulo em direção ao abdômen e contraia as escápulas."
+    },
+    {
+        "name": "Cadeira extensora",
+        "type": "Isolamento",
+        "muscle": "Quadríceps",
+        "difficulty": "Iniciante",
+        "instructions": "Sente-se na máquina, alinhe os joelhos e estenda as pernas até o final do movimento."
+    },
+    {
+        "name": "Mesa flexora",
+        "type": "Isolamento",
+        "muscle": "Posterior de coxa",
+        "difficulty": "Iniciante",
+        "instructions": "Deite-se de bruços e flexione os joelhos puxando o peso com os calcanhares em direção aos glúteos."
+    },
+    {
+        "name": "Stiff com halteres",
+        "type": "Força",
+        "muscle": "Posterior de coxa, glúteos",
+        "difficulty": "Intermediário",
+        "instructions": "Em pé, segure os halteres, desça o tronco com costas retas até sentir alongar os posteriores, e retorne."
+    },
+    {
+        "name": "Desenvolvimento militar com barra",
+        "type": "Força",
+        "muscle": "Ombros (deltoide anterior)",
+        "difficulty": "Avançado",
+        "instructions": "Com a barra na altura do ombro, empurre-a para cima até esticar os braços, mantendo o tronco firme."
+    },
+    {
+        "name": "Elevação frontal com halteres",
+        "type": "Isolamento",
+        "muscle": "Ombros (deltoide anterior)",
+        "difficulty": "Iniciante",
+        "instructions": "Em pé, eleve os halteres à frente até a altura dos ombros e retorne devagar."
+    },
+    {
+        "name": "Prancha isométrica",
+        "type": "Resistência",
+        "muscle": "Abdômen",
+        "difficulty": "Intermediário",
+        "instructions": "Deite-se de bruços, apoie antebraços e pés no chão e mantenha o corpo alinhado por tempo determinado."
+    },
+    {
+        "name": "Abdominal oblíquo no banco",
+        "type": "Isolamento",
+        "muscle": "Abdômen oblíquo",
+        "difficulty": "Intermediário",
+        "instructions": "Sentado lateralmente ao banco, desça o tronco e retorne contraindo o abdômen lateral."
+    },
+    {
+        "name": "Elevação de gêmeos em pé",
+        "type": "Resistência",
+        "muscle": "Panturrilha",
+        "difficulty": "Iniciante",
+        "instructions": "Fique em pé com os pés afastados e suba na ponta dos pés, contraindo os gêmeos. Retorne devagar."
+    },
+    {
+        "name": "Elevação de gêmeos sentado",
+        "type": "Isolamento",
+        "muscle": "Panturrilha (sóleo)",
+        "difficulty": "Intermediário",
+        "instructions": "Sente-se com peso sobre os joelhos e eleve os calcanhares, mantendo os pés no chão."
+    },
+    {
+        "name": "Supino inclinado com barra",
+        "type": "Força",
+        "muscle": "Peitoral",
+        "difficulty": "Intermediário",
+        "instructions": "Deite-se em um banco inclinado, segure a barra e empurre-a para cima, focando no peitoral superior."
+    },
+    {
+        "name": "Supino declinado com halteres",
+        "type": "Força",
+        "muscle": "Peitoral",
+        "difficulty": "Avançado",
+        "instructions": "Deite-se em banco declinado e empurre os halteres para cima, contraindo o peitoral inferior."
+    },
+    {
+        "name": "Peck deck",
+        "type": "Isolamento",
+        "muscle": "Peitoral",
+        "difficulty": "Iniciante",
+        "instructions": "Sente-se na máquina e aproxime os braços à frente do peito, contraindo o peitoral."
+    },
+    {
+        "name": "Puxada frontal na polia",
+        "type": "Força",
+        "muscle": "Costas",
+        "difficulty": "Iniciante",
+        "instructions": "Sente-se na polia e puxe a barra até o peito, mantendo o tronco ereto."
+    },
+    {
+        "name": "Puxada atrás da nuca",
+        "type": "Força",
+        "muscle": "Costas",
+        "difficulty": "Intermediário",
+        "instructions": "Puxe a barra para trás da cabeça, alinhando com os ombros e sem inclinar o tronco."
+    },
+    {
+        "name": "Remada unilatera com halteres",
+        "type": "Isolamento",
+        "muscle": "Costas",
+        "difficulty": "Intermediário",
+        "instructions": "Apoie um joelho no banco e puxe o halter com o braço oposto, mantendo as costas retas."
+    },
+    {
+        "name": "Remada máquina articulada",
+        "type": "Força",
+        "muscle": "Costas",
+        "difficulty": "Iniciante",
+        "instructions": "Sente-se na máquina e puxe os braços para trás, contraindo as escápulas."
+    },
+    {
+        "name": "Rosca alternada com halteres",
+        "type": "Força",
+        "muscle": "Bíceps",
+        "difficulty": "Iniciante",
+        "instructions": "Com halteres, alterne os braços na rosca concentrada."
+    },
+    {
+        "name": "Rosca concentrada",
+        "type": "Isolamento",
+        "muscle": "Bíceps",
+        "difficulty": "Intermediário",
+        "instructions": "Sente-se e apoie o braço na coxa para executar a rosca de forma controlada."
+    },
+    {
+        "name": "Rosca martelo",
+        "type": "Força",
+        "muscle": "Bíceps",
+        "difficulty": "Intermediário",
+        "instructions": "Com as palmas voltadas para dentro, flexione os cotovelos elevando os halteres."
+    },
+    {
+        "name": "Rosca 21",
+        "type": "Resistência",
+        "muscle": "Bíceps",
+        "difficulty": "Avançado",
+        "instructions": "7 repetições em 3 amplitudes diferentes, totalizando 21 repetições por série."
+    },
+    {
+        "name": "Tríceps testa com barra",
+        "type": "Força",
+        "muscle": "Tríceps",
+        "difficulty": "Intermediário",
+        "instructions": "Deitado, leve a barra até a testa flexionando os cotovelos, e depois estenda os braços."
+    },
+    {
+        "name": "Tríceps corda na polia",
+        "type": "Isolamento",
+        "muscle": "Tríceps",
+        "difficulty": "Iniciante",
+        "instructions": "Empurre a corda para baixo, separando as pontas no final do movimento."
+    },
+    {
+        "name": "Tríceps banco",
+        "type": "Resistência",
+        "muscle": "Tríceps",
+        "difficulty": "Iniciante",
+        "instructions": "Com as mãos apoiadas no banco atrás do corpo, flexione e estenda os cotovelos."
+    },
+    {
+        "name": "Tríceps francês com halteres",
+        "type": "Isolamento",
+        "muscle": "Tríceps",
+        "difficulty": "Intermediário",
+        "instructions": "Com halteres acima da cabeça, flexione os cotovelos para trás e estenda novamente."
+    },
+    {
+        "name": "Tríceps coice",
+        "type": "Isolamento",
+        "muscle": "Tríceps",
+        "difficulty": "Intermediário",
+        "instructions": "Incline o tronco à frente e estenda o cotovelo para trás com halteres."
+    }
+]

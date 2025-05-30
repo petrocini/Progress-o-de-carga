@@ -74,6 +74,9 @@ dependencies {
     implementation(libs.moshi)
     implementation(libs.moshi.kotlin)
     implementation(libs.retrofit.moshi.converter)
+    implementation(libs.gson)
+    implementation(libs.coil.compose)
+
 
     // Firebase
     implementation(platform("com.google.firebase:firebase-bom:32.7.0"))
