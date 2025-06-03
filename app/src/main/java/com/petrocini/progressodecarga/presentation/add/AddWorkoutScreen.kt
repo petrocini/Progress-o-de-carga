@@ -1,5 +1,6 @@
 package com.petrocini.progressodecarga.presentation.add
 
+import android.app.DatePickerDialog
 import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.*
 import androidx.compose.foundation.lazy.LazyColumn
@@ -18,6 +19,8 @@ import com.petrocini.progressodecarga.domain.model.WorkoutSet
 import com.petrocini.progressodecarga.domain.model.Workout
 import com.petrocini.progressodecarga.presentation.commom.utils.formatWeightInput
 import com.petrocini.progressodecarga.presentation.navigation.Screen
+import java.text.SimpleDateFormat
+import java.util.*
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
@@ -53,6 +56,12 @@ fun AddWorkoutScreen(
     var currentReps by remember { mutableStateOf("") }
     var currentWeight by remember { mutableStateOf("") }
 
+    // Date picker state
+    val calendar = Calendar.getInstance()
+    var selectedDate by remember { mutableStateOf(calendar.time) }
+    val dateFormatter = remember { SimpleDateFormat("dd/MM/yyyy", Locale.getDefault()) }
+    val formattedDate = remember(selectedDate) { dateFormatter.format(selectedDate) }
+
     Scaffold(
         topBar = {
             TopAppBar(title = { Text("Novo treino") })
@@ -61,10 +70,9 @@ fun AddWorkoutScreen(
             FloatingActionButton(
                 onClick = {
                     val userId = FirebaseAuth.getInstance().currentUser?.uid ?: return@FloatingActionButton
-                        viewModel.saveWorkout(userId) {
-                            navController.popBackStack()
-                        }
-
+                    viewModel.saveWorkout(userId) {
+                        navController.popBackStack()
+                    }
                 }
             ) {
                 Text("Save")
@@ -94,6 +102,36 @@ fun AddWorkoutScreen(
                         Text("Instruções: ${exercise.instructions}")
                     }
                 }
+            }
+
+            Spacer(modifier = Modifier.height(8.dp))
+
+            Box(modifier = Modifier.fillMaxWidth()) {
+                OutlinedTextField(
+                    value = formattedDate,
+                    onValueChange = {},
+                    label = { Text("Data do treino") },
+                    readOnly = true,
+                    modifier = Modifier
+                        .fillMaxWidth()
+                        .clickable(enabled = false) {}
+                )
+                Spacer(
+                    modifier = Modifier
+                        .matchParentSize()
+                        .clickable {
+                            DatePickerDialog(
+                                context,
+                                { _, year, month, day ->
+                                    calendar.set(year, month, day)
+                                    selectedDate = calendar.time
+                                },
+                                calendar.get(Calendar.YEAR),
+                                calendar.get(Calendar.MONTH),
+                                calendar.get(Calendar.DAY_OF_MONTH)
+                            ).show()
+                        }
+                )
             }
 
             Spacer(modifier = Modifier.height(16.dp))

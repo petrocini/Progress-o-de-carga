@@ -74,7 +74,7 @@ fun MainScaffold(
                     onClick = onLogout
                 )
                 NavigationDrawerItem(
-                    label = { Text("Desvincular conta") },
+                    label = { Text("Deletar conta") },
                     selected = false,
                     onClick = onDeleteAccount
                 )

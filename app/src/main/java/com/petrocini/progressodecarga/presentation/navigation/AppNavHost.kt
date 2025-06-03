@@ -36,6 +36,9 @@ fun AppNavGraph(navController: NavHostController) {
             startDestination = Screen.Home.route,
             modifier = Modifier.padding(innerPadding)
         ) {
+            composable(Screen.Auth.route) {
+                AuthScreen(navController)
+            }
             composable(Screen.Home.route) {
                 HomeScreen(navController)
             }
